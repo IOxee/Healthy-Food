@@ -1,0 +1,127 @@
+$color_1: #fff;
+$color_2: rgb(102, 102, 102);
+$color_3: rgb(39, 39, 39);
+$color_4: #666;
+$font-family_1: Arial, Helvetica, sans-serif;
+$background-color_1: rgb(60, 72, 177);
+$background-color_2: black;
+$background-color_3: white;
+$background-color_4: rgb(49, 131, 49);
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: $font-family_1;
+}
+.logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1px solid rgb(221, 215, 215);
+	>img {
+		height: 15%;
+		width: 50%;
+		padding: 10px 0;
+	}
+}
+
+.showcase {
+	height: 75vh;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+.login {
+	top: 0;
+	height: 650px;
+	width: 450px;
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	text-align: left;
+}
+.showcase-1 {
+	display: flex;
+	flex-direction: column;
+	margin-top: 0;
+	padding: 5px;
+}
+button, ion-button {
+	height: 45px;
+	margin-bottom: 10px;
+	border-radius: 22.5px;
+	border: none;
+	font-size: 15px;
+	cursor: pointer;
+	font-weight: bold;
+}
+.fb {
+	background-color: $background-color_1;
+	color: $color_1;
+}
+.ap {
+	background-color: $background-color_2;
+	color: $color_1;
+}
+.go {
+	background-color: $background-color_3;
+	color: $color_2;
+	border: 2.2px solid gray;
+}
+.ph {
+	background-color: $background-color_3;
+	color: $color_2;
+	border: 2.2px solid gray;
+}
+p {
+	text-align: center;
+}
+.showcase-2 {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	font-size: 14px;
+	font-weight: bold;
+	color: $color_3;
+}
+input {
+	margin-top: 10px;
+	margin-bottom: 22px;
+	height: 40px;
+	width: 99%;
+	font-size: 15px;
+	background-color: white;
+	border: 1px solid rgb(221, 215, 215);
+}
+form {
+	>a {
+		color: $color_4;
+		font-size: 16px;
+	}
+}
+input[type="checkbox"] {
+	height: 20px;
+	width: 20px;
+	border-radius: 3px;
+	color: $color_4;
+	&:checked {
+		background-color: $background-color_4;
+	}
+}
+.form-check-label {
+	padding-bottom: 10px;
+	color: $color_4;
+}
+.showcase-3 {
+	margin-top: 45px;
+	>button {
+		background-color: $background-color_4;
+		width: 12rem;
+		height: 50px;
+		border-radius: 25px;
+		margin-left: 110px;
+		color: $color_1;
+	}
+}
