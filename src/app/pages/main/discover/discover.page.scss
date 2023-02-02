@@ -1,0 +1,65 @@
+.same_line {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+ion-slides {
+	ion-slide {
+		ion-card {
+			border: 1px solid black;
+
+			ion-img {
+				width: 150px;
+				height: 150px;
+				// center the image
+				margin: 0 auto;
+				object-fit: cover;
+				position: relative;
+			}
+
+			ion-card-header {
+				ion-card-title {
+					font-size: 18px;
+					@if str-length(ion-card-title)>=5 and str-length(ion-card-title) <=8 {
+						font-size: 22px;
+					}
+
+					@else if str-length(ion-card-title)>=9 and str-length(ion-card-title) <=12 {
+						font-size: 20px;
+					}
+
+					@else if str-length(ion-card-title)>=19 and str-length(ion-card-title) <=23 {
+						font-size: 18px;
+					}
+
+					@else if str-length(ion-card-title)>=24 and str-length(ion-card-title) <=28 {
+						font-size: 16px;
+					}
+
+					@else if str-length(ion-card-title)>=29 and str-length(ion-card-title) <=33 {
+						text-overflow: ellipsis;
+						overflow: hidden;
+						white-space: nowrap;
+						width: 26ch;
+					}
+				}
+
+				ion-card-subtitle {
+					font-size: 12px;
+				}
+
+				.like-button {
+					position: absolute;
+					bottom: 10px;
+					right: 10px;
+
+					ion-icon {
+						font-size: 32px;
+						color: #ccc;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,8 +1,126 @@
-<ion-header>
-	<ion-toolbar>
-		<ion-title>Discover</ion-title>
-	</ion-toolbar>
-</ion-header>
+<ion-menu contentId="main-content">
+	<ion-header>
+		<ion-toolbar>
+			<ion-title>Menu Content</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content class="ion-padding">This is the menu content.</ion-content>
+</ion-menu>
 
-<ion-content>
-</ion-content>
+<div class="ion-page" id="main-content">
+	<ion-header>
+		<ion-toolbar>
+			<ion-buttons slot="start">
+				<ion-menu-button>
+
+				</ion-menu-button>
+			</ion-buttons>
+			<ion-searchbar animated="true" placeholder="Buscar recetas..."></ion-searchbar>
+			<ion-buttons slot="end">
+				<ion-button>
+					<ion-icon name="options-outline"></ion-icon>
+				</ion-button>
+			</ion-buttons>
+		</ion-toolbar>
+	</ion-header>
+
+	<ion-content class="ion-padding">
+		<ion-segment [(ngModel)]="selectedTab">
+			<ion-segment-button value="recepies">
+				<ion-label>Recepies</ion-label>
+			</ion-segment-button>
+			<ion-segment-button value="products">
+				<ion-label>Products</ion-label>
+			</ion-segment-button>
+			<ion-segment-button value="realfooders">
+				<ion-label>Realfooders</ion-label>
+			</ion-segment-button>
+			<ion-segment-button value="hashtags">
+				<ion-label>Hashtags</ion-label>
+			</ion-segment-button>
+		</ion-segment>
+
+		<div *ngIf="selectedTab === 'recepies'">
+			<div class="same_line">
+				<h3><b>Nuevas Recetas</b></h3>
+				<ion-button fill="clear" color="primary">
+					Ver todas
+				</ion-button>
+			</div>
+			<ion-slides [options]="sliderOptions">
+				<ion-slide *ngFor="let slide of recipes.slice(0, 5)">
+					<ion-card>
+						<ion-img [src]="slide.image"></ion-img>
+						<ion-card-header>
+							<ion-card-title>{{ slide.title }}</ion-card-title>
+							<ion-card-subtitle>{{ slide.author }}</ion-card-subtitle>
+						</ion-card-header>
+						<div class="like-button">
+							<ion-button fill="clear" color="danger" (click)="like(slide.id)">
+								<ion-icon name="heart-outline">
+									<span id="like_counter_{{slide.id}}"></span>
+								</ion-icon>
+							</ion-button>
+						</div>
+					</ion-card>
+				</ion-slide>
+			</ion-slides>
+
+			<div class="same_line">
+				<h3><b>Categorias</b></h3>
+				<ion-button fill="clear" color="primary">
+					Ver todas
+				</ion-button>
+			</div>
+
+			<ion-slides [options]="sliderOptions">
+				<ion-slide *ngFor="let slide of categories.slice(0, 5)">
+					<ion-card>
+						<ion-img [src]="slide.image"></ion-img>
+						<ion-card-header>
+							<ion-card-title style="font-size: 15px;">{{ slide.name }}</ion-card-title>
+						</ion-card-header>
+					</ion-card>
+				</ion-slide>
+			</ion-slides>
+
+
+
+			<h3><b>Tematicas</b></h3>
+
+
+
+			<h3><b>Desayunos Saludables</b></h3>
+
+
+
+			<h3><b>Videorecetas</b></h3>
+
+
+
+			<h3><b>Recetas en AirFryer</b></h3>
+
+
+
+			<h3><b>Recetas Plus</b></h3>
+
+
+
+			<h3><b>Receta del dia</b></h3>
+		</div>
+
+		<div *ngIf="selectedTab === 'products'">
+			<p>Products</p>
+		</div>
+
+		<div *ngIf="selectedTab === 'realfooders'">
+			<p>Realfooders</p>
+		</div>
+
+		<div *ngIf="selectedTab === 'hashtags'">
+			<p>Hashtags</p>
+		</div>
+
+
+	</ion-content>
+</div>
